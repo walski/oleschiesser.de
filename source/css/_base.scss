@@ -1,0 +1,385 @@
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+* {
+    @include box-sizing(border-box);
+}
+
+html {
+}
+
+body {
+    color: #666;
+    font-family: $textFont;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #fff;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+a {
+    color: $linkColor;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+    .white a {
+        color: $linkColorDarker;
+    }
+
+img {
+    vertical-align: middle;
+}
+
+p {
+    text-align: justify;
+    margin: 0 0 1em;
+
+    &.center {
+        text-align: center;
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: $titleFont;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin: 0 0 1.6em;
+
+    a {
+        color: inherit;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &.left {
+        text-align: left;
+        margin-bottom: 1.2em;
+    }
+}
+h1 {
+    text-align: center;
+    font-size: 35px;
+}
+h2 {
+    font-size: 22px;
+}
+
+form {
+    label {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 0.5em;
+        padding-left: 1px;
+        font-weight: 400;
+    }
+    input, textarea {
+        font: 300 12px $textFont;
+        border: 1px solid rgba(0,0,0,0.2);
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    input {
+        height: 30px;
+        padding: 0 10px;
+
+        &[type="submit"] {
+            width: auto;
+        }
+    }
+    textarea {
+        padding: 10px;
+        height: 100px;
+        line-height: 1.6em;
+    }
+    .form__status {
+        display: inline-block;
+        margin-left: 0.5em;
+        font-size: 0.9em;
+    }
+}
+.white {
+    label {
+        color: #666;
+    }
+    input, textarea {
+        border: 1px solid rgba(0,0,0,0.2);
+        color: #666;
+    }
+}
+.black {
+    label {
+        color: #999;
+    }
+    input, textarea {
+        background: rgba(0,0,0,0.2);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: #ccc;
+    }
+}
+
+
+hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+hr.dotted {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 8px;
+    margin: 50px 0;
+    position: relative;
+    background: url(../img/hr.png) no-repeat center;
+
+    &:before, &:after {
+        content: '';
+        width: 50%;
+        top: 3px;
+        position: absolute;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    &:before {
+        left: -25px;
+    }
+    &:after {
+        right: -25px;
+    }
+}
+
+
+figure {
+    figcaption {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 0.9em;
+        font-style: italic;
+        color: #999;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+
+.flex {
+  position: relative;
+  padding-bottom: 55%;
+  height: 0;
+  margin-bottom: 40px;
+
+  iframe {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+blockquote {
+    font-size: 16px;
+    line-height: 1.5em;
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+    background: none;
+
+    cite {
+        margin-top: 10px;
+        font-size: 11px;
+        text-transform: uppercase;
+        display: block;
+        font-style: normal;
+        font-weight: 700;
+    }
+}
+.white cite {
+    color: $linkColorDarker;
+}
+.black cite {
+    color: $linkColor;
+}
+
+address {
+    font-size: 0.9em;
+    color: #ccc;
+    font-style: normal;
+    line-height: 2.3em;
+
+    span {
+        color: #fff;
+    }
+}
+
+form.password {
+    margin: 20px 0 5px;
+    @include clearfix();
+
+    input {
+        margin: 0;
+        width: 65%;
+        float: left;
+
+        &[type="submit"] {
+            width: 30%;
+            margin-left: 5%;
+        }
+    }
+}
+
+html .button {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff !important;
+    line-height: 28px;
+    padding: 0 15px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    @include transition(all 0.3s);
+    @include linear-gradient($linkColor, darken($linkColor, 10%));
+
+    &:hover {
+        text-decoration: none;
+        @include linear-gradient(darken($linkColor, 5%), darken($linkColor, 15%));
+    }
+}
+    .black .button {
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+    .white .button {
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+
+.clearfix {
+    @include clearfix();
+}
+
+
+/* ==========================================================================
+   Box positioning and fullscreen layout
+   ========================================================================== */
+
+.cover-screen {
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &.large-break {
+        @media screen and (max-width: $largeBox) {
+            height: auto !important;
+            position: relative;
+            top: 0 !important;
+        }
+    }
+    &.small-break {
+        @media screen and (max-width: $smallBox) {
+            height: auto !important;
+            position: relative;
+            top: 0 !important;
+        }
+    }
+    &.slideshow-break {
+        @media screen and (max-width: $phoneBreak), screen and (max-height: $phoneBreakVertical) {
+            height: auto !important;
+        }
+    }
+}
+.cover-parent {
+    position: absolute;
+
+    &.small-break {
+        @media screen and (max-width: $smallBox) {
+            display: none;
+        }
+    }
+    &.large-break {
+        @media screen and (max-width: $largeBox) {
+            display: none;
+        }
+    }
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+
+    img {
+        opacity: 1;
+        @include transition(opacity 0.3s);
+
+        &.js-inactive {
+            opacity: 0;
+        }
+    }
+}
+
+.find-center {
+    position: relative;
+}
+
+.video {
+    iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+
+
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+.third, .half {
+    float: left;
+    display: inline-block;
+    padding: 0 15px;
+}
+.third {
+    width: 33.33%;
+}
+.half {
+    width: 50%;
+
+    @media screen and (max-width: $smallBox) {
+        width: 100%;
+        padding: 0;
+    }
+}
+.first {
+    padding-left: 0;
+}
+.last {
+    padding-right: 0;
+}

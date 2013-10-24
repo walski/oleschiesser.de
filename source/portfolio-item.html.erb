@@ -1,0 +1,24 @@
+
+
+<div class="cover-screen slideshow-break <% if active_project.uses_dark_controls? %>dark-controls<% end %>">
+
+  <div class="slideshow slideshow--bullets slideshow--controls" data-animation="fade" data-interval="0">
+
+    <ul class="slideshow__data">
+
+      <li data-thumb="/<%= project_image(active_project, active_project.cover_image, :thumb) %>" data-src="/<%= project_image(active_project, active_project.cover_image, :large) %>" data-cover="cover">
+        <div class="box box--small black find-center">
+          <%= markdown(active_project.description) %>
+        </div>
+      </li>
+
+      <% active_project.artwork.each do |artwork| %>
+        <% large_variant = "/#{project_image(active_project, artwork, :large)}" %>
+        <li data-thumb="/<%= project_image(active_project, artwork, :thumb) %>" data-src="<%= large_variant %>" data-cover="spacing">
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+
+</div>

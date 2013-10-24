@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <!--[if lt IE 9]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <![endif]-->
+
+    <!-- Page title -->
+    <title>Ole Schiesser</title>
+
+    <!-- Enable responsive design -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <!-- Stylesheets -->
+    <%= stylesheet_link_tag "style", "customizations" %>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,700,400italic,500,500italic|Roboto+Condensed:400,700">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+
+    <!-- Modernizr -->
+    <script src="/js/vendor/modernizr-latest.js"></script>
+</head>
+<body>
+
+    <!-- Page header -->
+    <header class="header white">
+
+        <!-- Logo -->
+        <h1>
+            <a href="/index.html">
+                <!-- Use transparent image with the height of 70px -->
+                <img src="/img/logo_menu_black.png" style="height:70px;" alt="Showlight">
+            </a>
+        </h1>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="nav nav--primary">
+                <li <% if defined? active_project %>class="selected"<% end %>>
+                    <a href="/index.html">Portfolio</a>
+                    <ul class="nav nav--secondary">
+                      <% project.each do |project| %>
+                        <li><a href="/project/<%= project.name %>.html"><%= project.label %></a></li>
+                      <% end %>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/contact.html">Kontakt</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <%= yield %>
+
+    <!-- Include jQuery -->
+    <script src="/js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="/js/vendor/jquery.zoom.js"></script>
+
+    <!-- Include main JavaScript file -->
+    <%= javascript_include_tag "script" %>
+</body>
+</html>

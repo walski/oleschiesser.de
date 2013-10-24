@@ -1,0 +1,10 @@
+<div class="cover-screen frontpage dark-controls">
+
+  <div class="slideshow slideshow--bullets slideshow--controls" data-interval="5000">
+    <ul class="slideshow__data">
+      <% project.each do |project| %>
+        <%= portfolio_item project: project %>
+      <% end %>
+    </ul>
+  </div>
+</div>
