@@ -3,7 +3,7 @@
 // =============== Settings ===============
 
 // Your e-mail address
-$to = 'example@example.com';
+$to = 'ole.schiesser@googlemail.com';
 
 
 // ============== E-mail test =============
@@ -37,7 +37,7 @@ if ( !empty($_POST['name']) && !empty($_POST['text']) && isValidEmail($_POST['em
 	$headers .= "\r\n" . 'Reply-To: ' . $_POST['email'];
 
 	// Send e-mail
-	if ( mail($to, 'Message from contact form', $_POST['text'], $headers) ) {
+	if ( mail($to, 'Message from oleschiesser.de contact form', $_POST['text'], $headers) ) {
 		die('sent');
 	} else {
 		die('not_sent');

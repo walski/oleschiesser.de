@@ -4,8 +4,12 @@
        border: 2px solid rgba(0, 0, 0, 0.8);
     }
 
-    .slideshow__slides li:hover {
-      cursor: pointer;
+    .slideshow__slides {
+      li {
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 
     .slideshow__controls a {
@@ -14,6 +18,30 @@
 
       &:hover {
         background-color: #000;
+      }
+    }
+  }
+}
+
+.slideshow.slideshow--bullets {
+  .slideshow__slides {
+    background: #000;
+
+    li {
+      background: #000;
+
+      .box {
+        h1 {
+          margin-bottom: 10px;
+        }
+
+        p {
+          text-align: center;
+        }
+
+        hr.dotted {
+          margin: 0 20px 8px;
+        }
       }
     }
   }
@@ -28,7 +56,7 @@
   background: url('/img/artwork/contact-cover-large-1400x900.jpg');
   background-repeat: no-repeat;
   background-position-x: right;
-  background-position-y: bottom;
+  background-position-y: top;
 
   @media screen and (max-width: 900px) {
     display: none;

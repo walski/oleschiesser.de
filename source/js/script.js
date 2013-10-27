@@ -513,11 +513,15 @@ jQuery(document).ready(function ($) {
 					ratioCondition = !ratioCondition;
 				}
 
-				if (ratioCondition) {
-					$img.css({ width: 'auto', height: parentHeight });
-				} else {
-					$img.css({ width: parentWidth, height: 'auto' });
-				}
+        var isCover = $img.parents('li').attr('data-cover') === 'cover';
+
+        if (!isCover) {
+  				if (ratioCondition) {
+            $img.css({ width: 'auto', height: parentHeight });
+  				} else {
+            $img.css({ width: parentWidth, height: 'auto' });
+  				}
+        }
 
 				$img.css({
 					left: (parentWidth - $img.outerWidth()) / 2 + spacing.top(),

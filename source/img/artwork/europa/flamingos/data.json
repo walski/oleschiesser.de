@@ -1,7 +1,8 @@
 {
   "thumbnail": "flamingo-1.jpg",
   "cover": "flamingo-bay.jpg",
-  "label": "Flamingos",
-  "sub-label": "Ganz viele Vögel",
+  "label": "MS Europa",
+  "sub-label": "Serie 1",
+  "nav-label": "Flamingos",
   "dark-controls": true
 }

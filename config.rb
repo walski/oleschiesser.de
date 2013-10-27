@@ -110,6 +110,10 @@ class Project
     data['sub-label']
   end
 
+  def nav_label
+    data['nav-label'] || label
+  end
+
   def cover_image
     data['cover']
   end
@@ -129,8 +133,10 @@ end
 
 set :project, Project
 
+ignore "/portfolio-item.html"
 Project.each do |project|
   proxy "/project/#{project.name}.html", "/portfolio-item.html", :locals => { :active_project => project }
+  ignore "/img/artwork/#{project.name}/description.html"
 end
 
 # Methods defined in the helpers block are available in templates
@@ -146,8 +152,8 @@ helpers do
 			<li data-thumb="/#{project_image(project, project.cover_image, :thumb)}" data-src="/#{project_image(project, project.cover_image, :large)}" data-cover="cover" href="/project/#{project.name}.html">
 				<div class="slideshow__label black">
 					<p>
-						<strong>#{project.name}</strong>
-						<span>#{project.sub_label}</span>
+						<strong>#{project.label}</strong>
+            #{project.sub_label ?  "<span>#{project.sub_label}</span>" : ''}
 					</p>
 				</div>
 			</li>
@@ -160,6 +166,9 @@ helpers do
 
     # Enable the custom ~~~ tag
     html.gsub!('<p>~~~</p>', '<hr class="dotted">')
+
+    # Enable non-breaking hyphens
+    html.gsub!('-', '&#8209;')
 
     html
   end

@@ -1,11 +1,11 @@
-# Ohhh yeah Flamingos
+# Flamingos
+
+## MS Europa - Serie 1
 
 ~~~
 
-Das ist wirklich cooler Kram. Sowas wie http://flamingos.com
+Auftragsarbeit für die Hapag-Lloyd Kreuzfahrten GmbH.
 
-## Auch Unterüberschriften gehen
+Auf dem Kreuzfahrtschiff MS Europa wurden im Zuge eines Redesigns 150 Suiten mit handveredelten Drucken aus fünf Tierkreisläufen ausgestattet. Die Motive orientieren sich an der Reiseroute des Schiffs.
 
-Oder **dicker** Text oooder *schiefer* oder etwa [Links mit nem eigenen Text](http://sportal.de).
-
-Das ist alles Wahnsinn!
+Originalmaße 70 x 90 cm und 80 x 100 cm gedruckt auf Solvoprint Smooth P.
